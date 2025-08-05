@@ -15,13 +15,37 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       height: 100%;
       font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+      position: relative;
     }
 
+    /* Vídeo de fundo */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    /* Camada de escurecimento suave */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    /* Conteúdo */
     body {
-      background: url("fundo.png") no-repeat center center/cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -40,14 +64,14 @@
     }
 
     h1 {
-      font-weight: 700; /* Bold */
+      font-weight: 700;
       font-size: 2.2rem;
       color: #ffffff;
       margin-bottom: 20px;
     }
 
     p {
-      font-weight: 300; /* Light */
+      font-weight: 300;
       font-size: 1rem;
       color: #ffffff;
       margin-bottom: 30px;
@@ -73,10 +97,21 @@
   </style>
 </head>
 <body>
+
+  <!-- Vídeo de fundo -->
+  <video autoplay muted loop class="video-bg">
+    <source src="video.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+
+  <!-- Escurecimento do fundo -->
+  <div class="overlay"></div>
+
+  <!-- Conteúdo principal -->
   <div class="container">
-    <h1>Site em construção 🚧</h1>
+    <h1>O meu portfólio ainda está em construção!</h1>
     <p>Enquanto isso, fale comigo no WhatsApp:</p>
-    <a class="button" href="https://wa.me/5511945683534?text=Olá,%20quero%20falar%20sobre%20um%20projeto%20de%20design!" target="_blank">
+    <a class="button" href="https://wa.me/553173163304?text=Olá,%20quero%20falar%20sobre%20um%20projeto%20de%20design!" target="_blank">
       Falar no WhatsApp
     </a>
   </div>
