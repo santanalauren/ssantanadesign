@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Site em construção</title>
 
-  <!-- Montserrat via Google Fonts -->
+  <!-- Fonte Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --glow-color: rgb(83, 39, 243);
+      --glow-spread-color: rgba(193, 171, 241, 0.781);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -18,33 +23,10 @@
     html, body {
       height: 100%;
       font-family: 'Montserrat', sans-serif;
+      background-color: #0b0b0b;
       overflow: hidden;
-      position: relative;
     }
 
-    /* Vídeo de fundo */
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    /* Camada de escurecimento suave */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: -1;
-    }
-
-    /* Conteúdo */
     body {
       display: flex;
       justify-content: center;
@@ -53,13 +35,13 @@
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-      max-width: 400px;
+      border-radius: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      max-width: 420px;
       width: 90%;
     }
 
@@ -77,41 +59,45 @@
       margin-bottom: 30px;
     }
 
-    a.button {
-      display: inline-block;
+    /* Botão Animado */
+    .glow-button {
+      background: linear-gradient(-45deg, #4e00c2, #3d5eff, #7847b6, #3d5eff);
+      background-size: 800% 400%;
       padding: 15px 30px;
-      border-radius: 12px;
+      border-radius: 40px;
       font-weight: 700;
       color: #fff;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: inline-block;
+      transition: all 0.5s;
+      animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+      border: none;
+      box-shadow: 0 0 0 transparent;
     }
 
-    a.button:hover {
-      background: rgba(255, 255, 255, 0.25);
+    .glow-button:hover {
+      background-image: linear-gradient(to right, #7649e9 0%, #0052fa 100%);
+      box-shadow: 0 0 5em 0.0001em var(--glow-color),
+                  0 0 2em 0.2em var(--glow-spread-color),
+                  inset 0 0 .5em .5em var(--glow-color);
+      cursor: pointer;
+    }
+
+    @keyframes gradient {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Vídeo de fundo -->
-  <video autoplay muted loop class="video-bg">
-    <source src="video.mp4" type="video/mp4" />
-    Seu navegador não suporta vídeo HTML5.
-  </video>
-
-  <!-- Escurecimento do fundo -->
-  <div class="overlay"></div>
-
-  <!-- Conteúdo principal -->
   <div class="container">
     <h1>O meu portfólio ainda está em construção!</h1>
-    <p>Enquanto isso, fale comigo no WhatsApp:</p>
-    <a class="button" href="https://wa.me/553173163304?text=Olá,%20quero%20falar%20sobre%20um%20projeto%20de%20design!" target="_blank">
+    <p>Enquanto isso, fale comigo aqui!</p>
+    <a class="glow-button" href="https://wa.me/553173163304?text=Olá,%20quero%20falar%20sobre%20um%20projeto%20de%20design!" target="_blank">
       Falar no WhatsApp
     </a>
   </div>
