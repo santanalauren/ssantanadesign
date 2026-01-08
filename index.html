@@ -4,28 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lauren Santana | Designer gráfico e web</title>
-
   <!-- Fonte Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --glow-color: rgb(83, 39, 243);
       --glow-spread-color: rgba(193, 171, 241, 0.781);
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html, body {
       height: 100%;
       font-family: 'Montserrat', sans-serif;
       overflow: hidden;
     }
-
     /* Vídeo de fundo */
     video#bg-video {
       position: fixed;
@@ -36,15 +31,13 @@
       object-fit: cover;
       z-index: -1;
     }
-
     body {
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      background-color: #000; /* fallback */
+      background-color: #000;
     }
-
     .container {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
@@ -55,28 +48,32 @@
       max-width: 420px;
       width: 90%;
     }
-
     h1 {
       font-weight: 700;
       font-size: 2.2rem;
       color: #ffffff;
       margin-bottom: 20px;
     }
-
     p {
       font-weight: 300;
       font-size: 1rem;
       color: #ffffff;
       margin-bottom: 30px;
     }
-
-    /* Botão Animado */
+    /* Container dos botões */
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    /* Botão Principal (Portfólio) */
     .glow-button {
       background: linear-gradient(-45deg, #4e00c2, #3d5eff, #7847b6, #3d5eff);
       background-size: 800% 400%;
-      padding: 15px 30px;
+      padding: 18px 35px;
       border-radius: 30px;
       font-weight: 700;
+      font-size: 1.1rem;
       color: #fff;
       text-decoration: none;
       display: inline-block;
@@ -85,15 +82,14 @@
       border: none;
       box-shadow: 0 0 0 transparent;
     }
-
     .glow-button:hover {
       background-image: linear-gradient(to right, #7649e9 0%, #0052fa 100%);
       box-shadow: 0 0 5em 0.0001em var(--glow-color),
                   0 0 2em 0.2em var(--glow-spread-color),
                   inset 0 0 .5em .5em var(--glow-color);
       cursor: pointer;
+      transform: translateY(-2px);
     }
-
     @keyframes gradient {
       0%, 100% {
         background-position: 0% 50%;
@@ -102,25 +98,69 @@
         background-position: 100% 50%;
       }
     }
+    /* Botões Secundários */
+    .secondary-button {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(5px);
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+    .secondary-button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transform: translateY(-1px);
+    }
+    /* Responsivo */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      .glow-button {
+        font-size: 1rem;
+        padding: 16px 30px;
+      }
+      .secondary-button {
+        font-size: 0.9rem;
+        padding: 11px 22px;
+      }
+    }
   </style>
   <script defer data-domain="santanalauren.github.io/ssantanadesign" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
-
   <!-- Vídeo de fundo -->
   <video id="bg-video" autoplay muted loop playsinline>
     <source src="video.mp4" type="video/mp4">
     Seu navegador não suporta vídeos HTML5.
   </video>
-
   <!-- Conteúdo -->
   <div class="container">
     <h1>O meu portfólio ainda está em construção!</h1>
-    <p>Enquanto isso, acesse o PDF e fale comigo por aqui:</p>
-    <a class="glow-button" href="https://wa.me/553173163304?text=Olá,%20quero%20falar%20sobre%20um%20projeto%20de%20design!" target="_blank">
-      Preciso de um design agora!
-    </a>
+    <p>Enquanto isso, confira meus trabalhos ou fale comigo:</p>
+    
+    <div class="buttons-container">
+      <!-- Botão Principal -->
+      <a class="glow-button" href="SEU_LINK_DO_PORTFOLIO.pdf" target="_blank">
+        VER PORTFÓLIO
+      </a>
+      
+      <!-- Botões Secundários -->
+      <a class="secondary-button" href="SEU_LINK_ULTIMO_TRABALHO.pdf" target="_blank">
+        Ver Último Trabalho
+      </a>
+      
+      <a class="secondary-button" href="https://wa.me/553173163304?text=Olá,%20quero%20falar%20sobre%20um%20projeto%20de%20design!" target="_blank">
+        Preciso de um design agora!
+      </a>
+    </div>
   </div>
-
 </body>
 </html>
